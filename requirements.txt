@@ -4,6 +4,5 @@ pickle4
 protobuf==3.20
 tensorflow==2.8.0
 tensorflow-estimator
-
-
+opencv-python-4.5.5.64
 
