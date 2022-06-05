@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title> Roofinder</title>
+        <link rel="stylesheet" type="text/css" href="static/style/style.css">
+    </head>
+    <body style="margin: 0; background-color: #ffd952">
+        <form method="post" enctype="multipart/form-data">
+        <div style="position: relative;">
+            <img src="static/website_images/website.png" alt="landpage" height="100%" width="100%">
+            <div class="imageupload">
+                <input type="file" id="img" name="img" accept="image/*">
+            </div>
+            <div class="divscale">
+               <b style="font-size: 15px;"> 1 px =  <input type="number" min="0" id="scale" name="scale">  m<sup>2</sup></b>
+            </div>
+            <div>
+                <input type="submit" value="submit" class="btn" id="btn" name="btn">
+            </div>
+        </div>
+        <div id="results" style="color:#0b22f3; font-size: 20px; margin: 20px;">
+            <h4> Results</h4>
+            <br>
+            <div class="res"  style="height: 50%;width:100%">
+                {% if image is defined %}
+                <img class='image' src="{{ image }}" alt="main image" height="80%" width="40%">
+                
+                {% if cropped is defined %} 
+                <img class="image" src="{{ seg_img }}" alt="segmented image" height="80%" width="40%">
+                {% else %}
+                <li><em>no segmented roofs found</em></li></p>
+                {% endif %}
+                {% else %}
+                <li><em>no input image</em></li></p>
+                {% endif %} 
+            </div>
+            <div class="res">
+                <h4> Roofs</h4>
+                <p> 
+                    {% if cropped is defined %} 
+                    {% set i = namespace(value=0) %}
+                    {% for image in cropped %}
+                    <div class='table' style="height:50%;width:30%">
+                        <img src={{image|e}} alt="image" height="80%" width="90%">
+                    </div>
+                    <div  class='table' style="height:50%;width:20%;">
+                        <span><b><i>Type:</i></b> {{labels[i.value]}}</span><br><br>   
+                        <span><b><i>Area:</i></b> {{area[i.value]}}</span> <br><br> 
+                    {% set i.value = i.value + 1 %}
+                    </div>
+                    <div class='table' style="height:50%;width:30%">
+                        <!-- <img src="static/website_images/output9.jpg.png" alt="image" height="80%" width="90%"> -->
+                    </div>
+                                       
+                    {% endfor %}
+                    {% else %}
+                    <li><em>no roofs found</em></li></p>
+                    {% endif %}
+                <div class='table' style="height:50%;width:30%">
+                    
+                </div>
+        </div>
+        </form>
+    </body>
+</html>

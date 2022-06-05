@@ -1,8 +1,15 @@
 Flask
 numpy
-pickle4
-protobuf==3.20
+skimage
+PIL
+os
 tensorflow==2.8.0
+keras
+cv2
+logging
+protobuf==3.20
 tensorflow-estimator
 opencv-python-4.5.5.64
+pickle4
+
 
