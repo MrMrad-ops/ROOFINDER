@@ -9,7 +9,7 @@ opencv_contrib_python
 #logging
 protobuf==3.20
 tensorflow-estimator
-#opencv-python-4.5.5.64
+opencv-python-4.5.5.64
 #pickle4
 
 
