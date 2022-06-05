@@ -4,7 +4,8 @@ scikit-image
 pillow
 tensorflow==2.8.0
 keras
-opencv-python
+opencv_contrib_python
+#opencv-python
 #logging
 protobuf==3.20
 tensorflow-estimator
