@@ -1,0 +1,93 @@
+
+            .imageupload {
+                position: absolute;
+                bottom: 43%;
+                left: 5%;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin: 5px 0;
+                opacity: 0.85;
+                display: inline-block;
+                background-color: #ffd752;
+                color: #0b22f3;
+            }
+            .divscale {
+                position: absolute;
+                bottom: 23%;
+                left: 5%;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin: 5px 0;
+                opacity: 0.85;
+                background-color: #ffd752;
+                color: #0b22f3;
+            }
+            #scale {
+                width: 40%;
+                position: relative;
+                border-radius: 5px;
+                opacity: 0.85;
+                display: inline-block;
+                font-size: 15px;
+                background-color: #eeece4;
+                color: #0b22f3;
+                padding-left: 5%;
+                margin-right: 5%;
+            }
+            .btn {
+                position: absolute;
+                bottom: 10%;
+                left: 10%;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin: 5px 0;
+                opacity: 0.85;
+                font-size: 17px;
+                line-height: 20px;
+                background-color: #ffd752;
+                color: #0b22f3;
+                cursor: pointer;
+                box-shadow: 0 5px #808080;
+            }
+            .btn:hover { 
+                transform: translateY(4px); 
+                font-size: 23px;
+                line-height: 23px;
+                box-shadow: 0 5px #666;
+            }
+
+            .btn:active {
+                background-color: #ffd752;
+                color: #0b22f3;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+            .linkedin {
+                position: absolute;
+                left: 69%;
+                padding: 10px 20px;
+                margin: 5px 0;
+                opacity: 0.85;
+                display: inline-block;
+                font-size: 18px;
+                line-height: 18px;
+                background-color: #2d3f4e;
+                color: #38b6ff;
+            }
+            .link:visited {color:#38b6ff;}
+
+            .image {
+                float: left;
+                margin: 20px;
+            }
+
+            .table {
+                float: left;
+                margin: 20px;
+            }
+            .res {
+                float: none;
+                margin: 20px;
+            }
+    
