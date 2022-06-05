@@ -1,15 +1,14 @@
 Flask
 numpy
-skimage
-PIL
-os
+scikit-image
+pillow
 tensorflow==2.8.0
 keras
-cv2
+opencv-python
 logging
 protobuf==3.20
 tensorflow-estimator
-opencv-python-4.5.5.64
-pickle4
+#opencv-python-4.5.5.64
+#pickle4
 
 
