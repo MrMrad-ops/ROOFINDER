@@ -17,9 +17,9 @@ def get_Predictions(filename):
     for file in os.listdir('static/crop'):
         os.remove(f'static/crop/{file}')
     
-    seg_model=load_model("static/models/segmentation_model.h5") 
+    seg_model=load_model("static/models/full_best_model.h5") 
     class_names = ['Flat', 'Gable', 'Hip']
-    model = load_model('static/models/classification_model.h5')
+    model = load_model('static/models/finalmodel.h5')
     
     img=load_img(filename,target_size=(256,256))
     img=img_to_array(img)
