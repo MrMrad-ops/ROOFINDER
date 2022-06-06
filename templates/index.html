@@ -42,15 +42,14 @@
                     <div class='table' style="height:50%;width:30%">
                         <img src={{image|e}} alt="image" height="80%" width="90%">
                     </div>
+                    <div class='table' style="height:50%;width:30%">
+                        <!-- <img src={{panels[i.value]}} alt="image" height="80%" width="90%"> -->
+                    </div>
                     <div  class='table' style="height:50%;width:20%;">
                         <span><b><i>Type:</i></b> {{labels[i.value]}}</span><br><br>   
                         <span><b><i>Area:</i></b> {{area[i.value]}}</span> <br><br> 
                     {% set i.value = i.value + 1 %}
-                    </div>
-                    <div class='table' style="height:50%;width:30%">
-                        <!-- <img src="static/website_images/output9.jpg.png" alt="image" height="80%" width="90%"> -->
-                    </div>
-                                       
+                    </div>                         
                     {% endfor %}
                     {% else %}
                     <li><em>no roofs found</em></li></p>
