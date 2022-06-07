@@ -34,9 +34,10 @@ def submit():
         os.remove(f'static/requested_images/{file}')
     
     image.save(os.path.join(app.config['UPLOAD_FOLDER'],name))
-    #image.save(f'static/requested_images/{name}')
+    image.save(f'static/requested_images/{name}')
+    image = f'static/requested_images/{name}'
     
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], name)
+    # full_filename = os.path.join(app.config['UPLOAD_FOLDER'], name)
 
     
     seg_image, cropped, labels, areas, panels = results.get_Predictions(full_filename, scale)
