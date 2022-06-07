@@ -39,7 +39,8 @@ def get_Predictions(filename, scale):
     im.save(seg_image)
 
     image=cv2.imread('static/segmented_images/2.png')
-    mainimage=cv2.imread(f'static/requested_images/{filename}')
+    mainimage=cv2.imread(filename,0)
+    #mainimage=cv2.imread(f'static/requested_images/{filename}')
     gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     ret2,th2 = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
     
