@@ -35,9 +35,11 @@ def submit():
     
     image.save(os.path.join(app.config['UPLOAD_FOLDER'],name))
     #image.save(f'static/requested_images/{name}')
+    
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], name)
 
     
-    seg_image, cropped, labels, areas, panels = results.get_Predictions(image, scale)
+    seg_image, cropped, labels, areas, panels = results.get_Predictions(full_filename, scale)
 
     # cropped = ['static/crop/1.jpg', 'static/crop/4.jpg', 'static/crop/2.jpg', 'static/crop/3.jpg']
     # labels = ['Hip', 'Hip', 'Flat', 'Flat'] 
