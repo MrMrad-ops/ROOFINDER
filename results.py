@@ -18,7 +18,7 @@ def get_Predictions(filename, scale):
     for file in os.listdir('static/panels'):
         os.remove(f'static/panels/{file}')   
     
-    seg_model=load_model("static/models/400-full_best_model.h5") 
+    seg_model=load_model("static/models/full_best_model.h5") 
     class_names = ['Flat', 'Gable', 'Hip']
     model = keras.models.load_model('static/models/finalmodel.h5')
     
