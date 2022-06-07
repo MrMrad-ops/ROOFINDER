@@ -18,7 +18,7 @@ def get_Predictions(filename, scale):
     for file in os.listdir('static/panels'):
         os.remove(f'static/panels/{file}')   
     
-    seg_model=load_model("static/models/full_best_model.h5") 
+    seg_model=load_model("static/models/400-full_best_model.h5") 
     class_names = ['Flat', 'Gable', 'Hip']
     model = keras.models.load_model('static/models/finalmodel.h5')
     
@@ -39,7 +39,6 @@ def get_Predictions(filename, scale):
     im.save(seg_image)
 
     image=cv2.imread('static/segmented_images/2.png')
-    # mainimage=cv2.imread(filename)
     mainimage=cv2.imread(f'static/requested_images/{filename}')
     gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     ret2,th2 = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
@@ -49,7 +48,6 @@ def get_Predictions(filename, scale):
     
     contours,_ = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     
-    contours_box=[cv2.boundingRect(cnt) for cnt in contours]
     i = 0
     areas = []
     classes = []
@@ -58,7 +56,7 @@ def get_Predictions(filename, scale):
     for cnt in contours:
         x,y,w,h=cv2.boundingRect(cnt)
         area = cv2.contourArea(cnt)
-        if area >200:
+        if area >300:
             if(i!=0):
                 box_image = mainimage[y : y+h, x: x+w]
                 # areas.append(area)
