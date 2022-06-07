@@ -26,7 +26,8 @@ def submit():
 
     image = request.files["img"]
     name= image.filename
-    mainimage = f'static/requested_images/{name}'
+    #mainimage = f'static/requested_images/{name}'
+    #mainimage = image.open(f'static/requested_images/{name}'
     scale = (request.form['scale'])
     
     for file in os.listdir('static/requested_images'):
@@ -36,7 +37,7 @@ def submit():
     #image.save(f'static/requested_images/{name}')
 
     
-    seg_image, cropped, labels, areas, panels = results.get_Predictions(mainimage, scale)
+    seg_image, cropped, labels, areas, panels = results.get_Predictions(image, scale)
 
     # cropped = ['static/crop/1.jpg', 'static/crop/4.jpg', 'static/crop/2.jpg', 'static/crop/3.jpg']
     # labels = ['Hip', 'Hip', 'Flat', 'Flat'] 
