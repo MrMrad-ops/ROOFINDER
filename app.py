@@ -12,9 +12,10 @@ import solar_panels_area
 import results
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+UPLOAD_FOLDER = 'static/requested_images'
 
 app=Flask(__name__, static_url_path='/static')
-
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/')
 def welcome():
     return render_template('index.html')
@@ -30,7 +31,9 @@ def submit():
     
     for file in os.listdir('static/requested_images'):
         os.remove(f'static/requested_images/{file}')
-    image.save(f'static/requested_images/{name}')
+    
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'],name))
+    #image.save(f'static/requested_images/{name}')
 
     
     seg_image, cropped, labels, areas, panels = results.get_Predictions(mainimage, scale)
