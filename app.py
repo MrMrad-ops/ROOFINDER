@@ -49,7 +49,7 @@ def submit():
     # seg_img = f'static/segmented_images/1.png'
 
 
-    return render_template('index.html',image=mainimage, seg_img = seg_image, cropped = cropped, labels=labels, area = areas, panels=panels) 
+    return render_template('index.html',image=image, seg_img = seg_image, cropped = cropped, labels=labels, area = areas, panels=panels) 
 
     
 if __name__=='__main__':
